@@ -1,0 +1,5 @@
+{
+    "appService.preDeployTask": "publish-release",
+    "appService.deploySubpath": "bin/Release/net9.0/publish",
+    "appService.defaultWebAppToDeploy": "/subscriptions/7e738e9f-51f8-460d-8535-81ec4e80a556/resourceGroups/tdmapp_group/providers/Microsoft.Web/sites/tdmwebapp"
+}

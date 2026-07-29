@@ -1,0 +1,83 @@
+{
+  "info": {
+    "name": "ExcelApi",
+    "_postman_id": "excelapi-collection-v1",
+    "description": "ExcelApi - Excel dosyası yükleyip MySQL'e kaydeden API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:5054",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Excel Upload",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/excel/upload",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "excel", "upload"]
+        },
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "file",
+              "type": "file",
+              "src": "",
+              "description": "Yüklenecek Excel dosyası (.xlsx)"
+            },
+            {
+              "key": "type",
+              "value": "1",
+              "type": "text",
+              "description": "Rapor tipi (int). Örn: 1, 2, 3..."
+            }
+          ]
+        },
+        "description": "Excel dosyasını yükler. PARAKENDECİLİK(KARNE) ve bayi-personel sayfalarını işler, her satır için karne görselini base64'e çevirir ve tbl_reports tablosuna kaydeder."
+      },
+      "response": [
+        {
+          "name": "200 OK - Başarılı",
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "[\n  {\n    \"id\": \"00000.12345\",\n    \"base64\": \"iVBORw0KGgoAAAANSUhEUgAA...\"\n  },\n  {\n    \"id\": \"00000.67890\",\n    \"base64\": \"iVBORw0KGgoAAAANSUhEUgAA...\"\n  }\n]",
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "name": "400 Bad Request - Dosya Yok",
+          "status": "Bad Request",
+          "code": 400,
+          "body": "Dosya yüklenmedi",
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "name": "400 Bad Request - Sayfa Bulunamadı",
+          "status": "Bad Request",
+          "code": 400,
+          "body": "Gerekli sayfalar bulunamadı.",
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "name": "500 Internal Server Error",
+          "status": "Internal Server Error",
+          "code": 500,
+          "body": "Sunucu hatası: <hata mesajı>",
+          "_postman_previewlanguage": "text"
+        }
+      ]
+    }
+  ]
+}

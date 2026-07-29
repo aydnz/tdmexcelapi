@@ -1,0 +1,301 @@
+/Users/hz111/Desktop/api/ExcelApi/bin/Debug/net9.0/appsettings.Development.json
+/Users/hz111/Desktop/api/ExcelApi/bin/Debug/net9.0/appsettings.json
+/Users/hz111/Desktop/api/ExcelApi/bin/Debug/net9.0/ExcelApi.staticwebassets.endpoints.json
+/Users/hz111/Desktop/api/ExcelApi/bin/Debug/net9.0/ExcelApi
+/Users/hz111/Desktop/api/ExcelApi/bin/Debug/net9.0/ExcelApi.deps.json
+/Users/hz111/Desktop/api/ExcelApi/bin/Debug/net9.0/ExcelApi.runtimeconfig.json
+/Users/hz111/Desktop/api/ExcelApi/bin/Debug/net9.0/ExcelApi.dll
+/Users/hz111/Desktop/api/ExcelApi/bin/Debug/net9.0/ExcelApi.pdb
+/Users/hz111/Desktop/api/ExcelApi/bin/Debug/net9.0/Microsoft.AspNetCore.OpenApi.dll
+/Users/hz111/Desktop/api/ExcelApi/bin/Debug/net9.0/Microsoft.OpenApi.dll
+/Users/hz111/Desktop/api/ExcelApi/obj/Debug/net9.0/ExcelApi.csproj.AssemblyReference.cache
+/Users/hz111/Desktop/api/ExcelApi/obj/Debug/net9.0/ExcelApi.GeneratedMSBuildEditorConfig.editorconfig
+/Users/hz111/Desktop/api/ExcelApi/obj/Debug/net9.0/ExcelApi.AssemblyInfoInputs.cache
+/Users/hz111/Desktop/api/ExcelApi/obj/Debug/net9.0/ExcelApi.AssemblyInfo.cs
+/Users/hz111/Desktop/api/ExcelApi/obj/Debug/net9.0/ExcelApi.csproj.CoreCompileInputs.cache
+/Users/hz111/Desktop/api/ExcelApi/obj/Debug/net9.0/ExcelApi.MvcApplicationPartsAssemblyInfo.cs
+/Users/hz111/Desktop/api/ExcelApi/obj/Debug/net9.0/ExcelApi.MvcApplicationPartsAssemblyInfo.cache
+/Users/hz111/Desktop/api/ExcelApi/obj/Debug/net9.0/scopedcss/bundle/ExcelApi.styles.css
+/Users/hz111/Desktop/api/ExcelApi/obj/Debug/net9.0/staticwebassets.build.json
+/Users/hz111/Desktop/api/ExcelApi/obj/Debug/net9.0/staticwebassets.development.json
+/Users/hz111/Desktop/api/ExcelApi/obj/Debug/net9.0/staticwebassets.build.endpoints.json
+/Users/hz111/Desktop/api/ExcelApi/obj/Debug/net9.0/staticwebassets/msbuild.ExcelApi.Microsoft.AspNetCore.StaticWebAssets.props
+/Users/hz111/Desktop/api/ExcelApi/obj/Debug/net9.0/staticwebassets/msbuild.ExcelApi.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+/Users/hz111/Desktop/api/ExcelApi/obj/Debug/net9.0/staticwebassets/msbuild.build.ExcelApi.props
+/Users/hz111/Desktop/api/ExcelApi/obj/Debug/net9.0/staticwebassets/msbuild.buildMultiTargeting.ExcelApi.props
+/Users/hz111/Desktop/api/ExcelApi/obj/Debug/net9.0/staticwebassets/msbuild.buildTransitive.ExcelApi.props
+/Users/hz111/Desktop/api/ExcelApi/obj/Debug/net9.0/staticwebassets.pack.json
+/Users/hz111/Desktop/api/ExcelApi/obj/Debug/net9.0/ExcelApi.csproj.Up2Date
+/Users/hz111/Desktop/api/ExcelApi/obj/Debug/net9.0/ExcelApi.dll
+/Users/hz111/Desktop/api/ExcelApi/obj/Debug/net9.0/refint/ExcelApi.dll
+/Users/hz111/Desktop/api/ExcelApi/obj/Debug/net9.0/ExcelApi.pdb
+/Users/hz111/Desktop/api/ExcelApi/obj/Debug/net9.0/ExcelApi.genruntimeconfig.cache
+/Users/hz111/Desktop/api/ExcelApi/obj/Debug/net9.0/ref/ExcelApi.dll
+/Users/hz111/Desktop/api/ExcelApi/bin/Debug/net9.0/ClosedXML.dll
+/Users/hz111/Desktop/api/ExcelApi/bin/Debug/net9.0/ClosedXML.Parser.dll
+/Users/hz111/Desktop/api/ExcelApi/bin/Debug/net9.0/DocumentFormat.OpenXml.dll
+/Users/hz111/Desktop/api/ExcelApi/bin/Debug/net9.0/DocumentFormat.OpenXml.Framework.dll
+/Users/hz111/Desktop/api/ExcelApi/bin/Debug/net9.0/ExcelNumberFormat.dll
+/Users/hz111/Desktop/api/ExcelApi/bin/Debug/net9.0/RBush.dll
+/Users/hz111/Desktop/api/ExcelApi/bin/Debug/net9.0/SixLabors.Fonts.dll
+/Users/hz111/Desktop/api/ExcelApi/bin/Debug/net9.0/System.IO.Packaging.dll
+/Users/hz111/Desktop/api/ExcelApi/bin/Debug/net9.0/EPPlus.dll
+/Users/hz111/Desktop/api/ExcelApi/bin/Debug/net9.0/Microsoft.Win32.SystemEvents.dll
+/Users/hz111/Desktop/api/ExcelApi/bin/Debug/net9.0/System.Drawing.Common.dll
+/Users/hz111/Desktop/api/ExcelApi/bin/Debug/net9.0/runtimes/win/lib/netcoreapp3.0/Microsoft.Win32.SystemEvents.dll
+/Users/hz111/Desktop/api/ExcelApi/bin/Debug/net9.0/runtimes/unix/lib/netcoreapp3.0/System.Drawing.Common.dll
+/Users/hz111/Desktop/api/ExcelApi/bin/Debug/net9.0/runtimes/win/lib/netcoreapp3.0/System.Drawing.Common.dll
+/Users/hz111/Desktop/api/ExcelApi/bin/Debug/net9.0/Microsoft.IO.RecyclableMemoryStream.dll
+/Users/hz111/Desktop/api/ExcelApi/bin/Debug/net9.0/System.Xml.XPath.XmlDocument.dll
+/Users/hz111/Desktop/api/ExcelApi kopyası 2/bin/Debug/net9.0/appsettings.Development.json
+/Users/hz111/Desktop/api/ExcelApi kopyası 2/bin/Debug/net9.0/appsettings.json
+/Users/hz111/Desktop/api/ExcelApi kopyası 2/bin/Debug/net9.0/ExcelApi.staticwebassets.endpoints.json
+/Users/hz111/Desktop/api/ExcelApi kopyası 2/bin/Debug/net9.0/ExcelApi
+/Users/hz111/Desktop/api/ExcelApi kopyası 2/bin/Debug/net9.0/ExcelApi.deps.json
+/Users/hz111/Desktop/api/ExcelApi kopyası 2/bin/Debug/net9.0/ExcelApi.runtimeconfig.json
+/Users/hz111/Desktop/api/ExcelApi kopyası 2/bin/Debug/net9.0/ExcelApi.dll
+/Users/hz111/Desktop/api/ExcelApi kopyası 2/bin/Debug/net9.0/ExcelApi.pdb
+/Users/hz111/Desktop/api/ExcelApi kopyası 2/bin/Debug/net9.0/BitMiracle.LibTiff.NET.dll
+/Users/hz111/Desktop/api/ExcelApi kopyası 2/bin/Debug/net9.0/BouncyCastle.Cryptography.dll
+/Users/hz111/Desktop/api/ExcelApi kopyası 2/bin/Debug/net9.0/ClosedXML.dll
+/Users/hz111/Desktop/api/ExcelApi kopyası 2/bin/Debug/net9.0/ClosedXML.Parser.dll
+/Users/hz111/Desktop/api/ExcelApi kopyası 2/bin/Debug/net9.0/DocumentFormat.OpenXml.dll
+/Users/hz111/Desktop/api/ExcelApi kopyası 2/bin/Debug/net9.0/DocumentFormat.OpenXml.Framework.dll
+/Users/hz111/Desktop/api/ExcelApi kopyası 2/bin/Debug/net9.0/EPPlus.dll
+/Users/hz111/Desktop/api/ExcelApi kopyası 2/bin/Debug/net9.0/ExcelNumberFormat.dll
+/Users/hz111/Desktop/api/ExcelApi kopyası 2/bin/Debug/net9.0/GrapeCity.Documents.Barcode.dll
+/Users/hz111/Desktop/api/ExcelApi kopyası 2/bin/Debug/net9.0/GrapeCity.DataVisualization.Chart.dll
+/Users/hz111/Desktop/api/ExcelApi kopyası 2/bin/Debug/net9.0/GrapeCity.Documents.Excel.dll
+/Users/hz111/Desktop/api/ExcelApi kopyası 2/bin/Debug/net9.0/GrapeCity.Documents.Imaging.dll
+/Users/hz111/Desktop/api/ExcelApi kopyası 2/bin/Debug/net9.0/GrapeCity.Documents.Pdf.dll
+/Users/hz111/Desktop/api/ExcelApi kopyası 2/bin/Debug/net9.0/HarfBuzzSharp.dll
+/Users/hz111/Desktop/api/ExcelApi kopyası 2/bin/Debug/net9.0/Microsoft.AspNetCore.OpenApi.dll
+/Users/hz111/Desktop/api/ExcelApi kopyası 2/bin/Debug/net9.0/Microsoft.IO.RecyclableMemoryStream.dll
+/Users/hz111/Desktop/api/ExcelApi kopyası 2/bin/Debug/net9.0/Microsoft.Office.Interop.Excel.dll
+/Users/hz111/Desktop/api/ExcelApi kopyası 2/bin/Debug/net9.0/Microsoft.OpenApi.dll
+/Users/hz111/Desktop/api/ExcelApi kopyası 2/bin/Debug/net9.0/Microsoft.Win32.SystemEvents.dll
+/Users/hz111/Desktop/api/ExcelApi kopyası 2/bin/Debug/net9.0/Newtonsoft.Json.dll
+/Users/hz111/Desktop/api/ExcelApi kopyası 2/bin/Debug/net9.0/RBush.dll
+/Users/hz111/Desktop/api/ExcelApi kopyası 2/bin/Debug/net9.0/SixLabors.Fonts.dll
+/Users/hz111/Desktop/api/ExcelApi kopyası 2/bin/Debug/net9.0/SkiaSharp.dll
+/Users/hz111/Desktop/api/ExcelApi kopyası 2/bin/Debug/net9.0/SkiaSharp.HarfBuzz.dll
+/Users/hz111/Desktop/api/ExcelApi kopyası 2/bin/Debug/net9.0/Syncfusion.Compression.Portable.dll
+/Users/hz111/Desktop/api/ExcelApi kopyası 2/bin/Debug/net9.0/Syncfusion.Licensing.dll
+/Users/hz111/Desktop/api/ExcelApi kopyası 2/bin/Debug/net9.0/Syncfusion.MetafileRenderer.NET.dll
+/Users/hz111/Desktop/api/ExcelApi kopyası 2/bin/Debug/net9.0/Syncfusion.Pdf.Imaging.Portable.dll
+/Users/hz111/Desktop/api/ExcelApi kopyası 2/bin/Debug/net9.0/Syncfusion.Pdf.Portable.dll
+/Users/hz111/Desktop/api/ExcelApi kopyası 2/bin/Debug/net9.0/Syncfusion.SkiaSharpHelper.Portable.dll
+/Users/hz111/Desktop/api/ExcelApi kopyası 2/bin/Debug/net9.0/Syncfusion.XlsIO.Portable.dll
+/Users/hz111/Desktop/api/ExcelApi kopyası 2/bin/Debug/net9.0/Syncfusion.XlsIORenderer.Portable.dll
+/Users/hz111/Desktop/api/ExcelApi kopyası 2/bin/Debug/net9.0/System.Drawing.Common.dll
+/Users/hz111/Desktop/api/ExcelApi kopyası 2/bin/Debug/net9.0/System.IO.Packaging.dll
+/Users/hz111/Desktop/api/ExcelApi kopyası 2/bin/Debug/net9.0/System.Xml.XPath.XmlDocument.dll
+/Users/hz111/Desktop/api/ExcelApi kopyası 2/bin/Debug/net9.0/zh/GrapeCity.DataVisualization.Chart.resources.dll
+/Users/hz111/Desktop/api/ExcelApi kopyası 2/bin/Debug/net9.0/ja/GrapeCity.Documents.Imaging.resources.dll
+/Users/hz111/Desktop/api/ExcelApi kopyası 2/bin/Debug/net9.0/ja/GrapeCity.Documents.Pdf.resources.dll
+/Users/hz111/Desktop/api/ExcelApi kopyası 2/bin/Debug/net9.0/runtimes/osx/native/libHarfBuzzSharp.dylib
+/Users/hz111/Desktop/api/ExcelApi kopyası 2/bin/Debug/net9.0/runtimes/win-arm64/native/libHarfBuzzSharp.dll
+/Users/hz111/Desktop/api/ExcelApi kopyası 2/bin/Debug/net9.0/runtimes/win-x64/native/libHarfBuzzSharp.dll
+/Users/hz111/Desktop/api/ExcelApi kopyası 2/bin/Debug/net9.0/runtimes/win-x86/native/libHarfBuzzSharp.dll
+/Users/hz111/Desktop/api/ExcelApi kopyası 2/bin/Debug/net9.0/runtimes/win/lib/netcoreapp3.0/Microsoft.Win32.SystemEvents.dll
+/Users/hz111/Desktop/api/ExcelApi kopyası 2/bin/Debug/net9.0/runtimes/osx/native/libSkiaSharp.dylib
+/Users/hz111/Desktop/api/ExcelApi kopyası 2/bin/Debug/net9.0/runtimes/win-arm64/native/libSkiaSharp.dll
+/Users/hz111/Desktop/api/ExcelApi kopyası 2/bin/Debug/net9.0/runtimes/win-x64/native/libSkiaSharp.dll
+/Users/hz111/Desktop/api/ExcelApi kopyası 2/bin/Debug/net9.0/runtimes/win-x86/native/libSkiaSharp.dll
+/Users/hz111/Desktop/api/ExcelApi kopyası 2/bin/Debug/net9.0/runtimes/unix/lib/netcoreapp3.0/System.Drawing.Common.dll
+/Users/hz111/Desktop/api/ExcelApi kopyası 2/bin/Debug/net9.0/runtimes/win/lib/netcoreapp3.0/System.Drawing.Common.dll
+/Users/hz111/Desktop/api/ExcelApi kopyası 2/obj/Debug/net9.0/ExcelApi.csproj.AssemblyReference.cache
+/Users/hz111/Desktop/api/ExcelApi kopyası 2/obj/Debug/net9.0/ExcelApi.GeneratedMSBuildEditorConfig.editorconfig
+/Users/hz111/Desktop/api/ExcelApi kopyası 2/obj/Debug/net9.0/ExcelApi.AssemblyInfoInputs.cache
+/Users/hz111/Desktop/api/ExcelApi kopyası 2/obj/Debug/net9.0/ExcelApi.AssemblyInfo.cs
+/Users/hz111/Desktop/api/ExcelApi kopyası 2/obj/Debug/net9.0/ExcelApi.csproj.CoreCompileInputs.cache
+/Users/hz111/Desktop/api/ExcelApi kopyası 2/obj/Debug/net9.0/ExcelApi.MvcApplicationPartsAssemblyInfo.cs
+/Users/hz111/Desktop/api/ExcelApi kopyası 2/obj/Debug/net9.0/ExcelApi.MvcApplicationPartsAssemblyInfo.cache
+/Users/hz111/Desktop/api/ExcelApi kopyası 2/obj/Debug/net9.0/scopedcss/bundle/ExcelApi.styles.css
+/Users/hz111/Desktop/api/ExcelApi kopyası 2/obj/Debug/net9.0/staticwebassets.build.json
+/Users/hz111/Desktop/api/ExcelApi kopyası 2/obj/Debug/net9.0/staticwebassets.development.json
+/Users/hz111/Desktop/api/ExcelApi kopyası 2/obj/Debug/net9.0/staticwebassets.build.endpoints.json
+/Users/hz111/Desktop/api/ExcelApi kopyası 2/obj/Debug/net9.0/staticwebassets/msbuild.ExcelApi.Microsoft.AspNetCore.StaticWebAssets.props
+/Users/hz111/Desktop/api/ExcelApi kopyası 2/obj/Debug/net9.0/staticwebassets/msbuild.ExcelApi.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+/Users/hz111/Desktop/api/ExcelApi kopyası 2/obj/Debug/net9.0/staticwebassets/msbuild.build.ExcelApi.props
+/Users/hz111/Desktop/api/ExcelApi kopyası 2/obj/Debug/net9.0/staticwebassets/msbuild.buildMultiTargeting.ExcelApi.props
+/Users/hz111/Desktop/api/ExcelApi kopyası 2/obj/Debug/net9.0/staticwebassets/msbuild.buildTransitive.ExcelApi.props
+/Users/hz111/Desktop/api/ExcelApi kopyası 2/obj/Debug/net9.0/staticwebassets.pack.json
+/Users/hz111/Desktop/api/ExcelApi kopyası 2/obj/Debug/net9.0/ExcelApi.csproj.Up2Date
+/Users/hz111/Desktop/api/ExcelApi kopyası 2/obj/Debug/net9.0/ExcelApi.dll
+/Users/hz111/Desktop/api/ExcelApi kopyası 2/obj/Debug/net9.0/refint/ExcelApi.dll
+/Users/hz111/Desktop/api/ExcelApi kopyası 2/obj/Debug/net9.0/ExcelApi.pdb
+/Users/hz111/Desktop/api/ExcelApi kopyası 2/obj/Debug/net9.0/ExcelApi.genruntimeconfig.cache
+/Users/hz111/Desktop/api/ExcelApi kopyası 2/obj/Debug/net9.0/ref/ExcelApi.dll
+/Users/hz111/Desktop/tdmSonerApi/bin/Debug/net9.0/appsettings.Development.json
+/Users/hz111/Desktop/tdmSonerApi/bin/Debug/net9.0/appsettings.json
+/Users/hz111/Desktop/tdmSonerApi/bin/Debug/net9.0/ExcelApi.staticwebassets.endpoints.json
+/Users/hz111/Desktop/tdmSonerApi/bin/Debug/net9.0/publish/publish/web.config
+/Users/hz111/Desktop/tdmSonerApi/bin/Debug/net9.0/publish/web.config
+/Users/hz111/Desktop/tdmSonerApi/bin/Debug/net9.0/publish/appsettings.Development.json
+/Users/hz111/Desktop/tdmSonerApi/bin/Debug/net9.0/publish/appsettings.json
+/Users/hz111/Desktop/tdmSonerApi/bin/Debug/net9.0/publish/ExcelApi.deps.json
+/Users/hz111/Desktop/tdmSonerApi/bin/Debug/net9.0/publish/ExcelApi.runtimeconfig.json
+/Users/hz111/Desktop/tdmSonerApi/bin/Debug/net9.0/publish/ExcelApi.staticwebassets.endpoints.json
+/Users/hz111/Desktop/tdmSonerApi/bin/Debug/net9.0/publish/publish/appsettings.Development.json
+/Users/hz111/Desktop/tdmSonerApi/bin/Debug/net9.0/publish/publish/appsettings.json
+/Users/hz111/Desktop/tdmSonerApi/bin/Debug/net9.0/publish/publish/ExcelApi.deps.json
+/Users/hz111/Desktop/tdmSonerApi/bin/Debug/net9.0/publish/publish/ExcelApi.runtimeconfig.json
+/Users/hz111/Desktop/tdmSonerApi/bin/Debug/net9.0/publish/publish/ExcelApi.staticwebassets.endpoints.json
+/Users/hz111/Desktop/tdmSonerApi/bin/Debug/net9.0/ExcelApi
+/Users/hz111/Desktop/tdmSonerApi/bin/Debug/net9.0/ExcelApi.deps.json
+/Users/hz111/Desktop/tdmSonerApi/bin/Debug/net9.0/ExcelApi.runtimeconfig.json
+/Users/hz111/Desktop/tdmSonerApi/bin/Debug/net9.0/ExcelApi.dll
+/Users/hz111/Desktop/tdmSonerApi/bin/Debug/net9.0/ExcelApi.pdb
+/Users/hz111/Desktop/tdmSonerApi/bin/Debug/net9.0/BitMiracle.LibTiff.NET.dll
+/Users/hz111/Desktop/tdmSonerApi/bin/Debug/net9.0/BouncyCastle.Cryptography.dll
+/Users/hz111/Desktop/tdmSonerApi/bin/Debug/net9.0/ClosedXML.dll
+/Users/hz111/Desktop/tdmSonerApi/bin/Debug/net9.0/ClosedXML.Parser.dll
+/Users/hz111/Desktop/tdmSonerApi/bin/Debug/net9.0/DocumentFormat.OpenXml.dll
+/Users/hz111/Desktop/tdmSonerApi/bin/Debug/net9.0/DocumentFormat.OpenXml.Framework.dll
+/Users/hz111/Desktop/tdmSonerApi/bin/Debug/net9.0/EPPlus.dll
+/Users/hz111/Desktop/tdmSonerApi/bin/Debug/net9.0/ExcelNumberFormat.dll
+/Users/hz111/Desktop/tdmSonerApi/bin/Debug/net9.0/GrapeCity.Documents.Barcode.dll
+/Users/hz111/Desktop/tdmSonerApi/bin/Debug/net9.0/GrapeCity.DataVisualization.Chart.dll
+/Users/hz111/Desktop/tdmSonerApi/bin/Debug/net9.0/GrapeCity.Documents.Excel.dll
+/Users/hz111/Desktop/tdmSonerApi/bin/Debug/net9.0/GrapeCity.Documents.Imaging.dll
+/Users/hz111/Desktop/tdmSonerApi/bin/Debug/net9.0/GrapeCity.Documents.Pdf.dll
+/Users/hz111/Desktop/tdmSonerApi/bin/Debug/net9.0/HarfBuzzSharp.dll
+/Users/hz111/Desktop/tdmSonerApi/bin/Debug/net9.0/Microsoft.AspNetCore.OpenApi.dll
+/Users/hz111/Desktop/tdmSonerApi/bin/Debug/net9.0/Microsoft.IO.RecyclableMemoryStream.dll
+/Users/hz111/Desktop/tdmSonerApi/bin/Debug/net9.0/Microsoft.Office.Interop.Excel.dll
+/Users/hz111/Desktop/tdmSonerApi/bin/Debug/net9.0/Microsoft.OpenApi.dll
+/Users/hz111/Desktop/tdmSonerApi/bin/Debug/net9.0/Microsoft.Win32.SystemEvents.dll
+/Users/hz111/Desktop/tdmSonerApi/bin/Debug/net9.0/Newtonsoft.Json.dll
+/Users/hz111/Desktop/tdmSonerApi/bin/Debug/net9.0/RBush.dll
+/Users/hz111/Desktop/tdmSonerApi/bin/Debug/net9.0/SixLabors.Fonts.dll
+/Users/hz111/Desktop/tdmSonerApi/bin/Debug/net9.0/SkiaSharp.dll
+/Users/hz111/Desktop/tdmSonerApi/bin/Debug/net9.0/SkiaSharp.HarfBuzz.dll
+/Users/hz111/Desktop/tdmSonerApi/bin/Debug/net9.0/Syncfusion.Compression.Portable.dll
+/Users/hz111/Desktop/tdmSonerApi/bin/Debug/net9.0/Syncfusion.Licensing.dll
+/Users/hz111/Desktop/tdmSonerApi/bin/Debug/net9.0/Syncfusion.MetafileRenderer.NET.dll
+/Users/hz111/Desktop/tdmSonerApi/bin/Debug/net9.0/Syncfusion.Pdf.Imaging.Portable.dll
+/Users/hz111/Desktop/tdmSonerApi/bin/Debug/net9.0/Syncfusion.Pdf.Portable.dll
+/Users/hz111/Desktop/tdmSonerApi/bin/Debug/net9.0/Syncfusion.SkiaSharpHelper.Portable.dll
+/Users/hz111/Desktop/tdmSonerApi/bin/Debug/net9.0/Syncfusion.XlsIO.Portable.dll
+/Users/hz111/Desktop/tdmSonerApi/bin/Debug/net9.0/Syncfusion.XlsIORenderer.Portable.dll
+/Users/hz111/Desktop/tdmSonerApi/bin/Debug/net9.0/System.Drawing.Common.dll
+/Users/hz111/Desktop/tdmSonerApi/bin/Debug/net9.0/System.IO.Packaging.dll
+/Users/hz111/Desktop/tdmSonerApi/bin/Debug/net9.0/System.Xml.XPath.XmlDocument.dll
+/Users/hz111/Desktop/tdmSonerApi/bin/Debug/net9.0/zh/GrapeCity.DataVisualization.Chart.resources.dll
+/Users/hz111/Desktop/tdmSonerApi/bin/Debug/net9.0/ja/GrapeCity.Documents.Imaging.resources.dll
+/Users/hz111/Desktop/tdmSonerApi/bin/Debug/net9.0/ja/GrapeCity.Documents.Pdf.resources.dll
+/Users/hz111/Desktop/tdmSonerApi/bin/Debug/net9.0/runtimes/osx/native/libHarfBuzzSharp.dylib
+/Users/hz111/Desktop/tdmSonerApi/bin/Debug/net9.0/runtimes/win-arm64/native/libHarfBuzzSharp.dll
+/Users/hz111/Desktop/tdmSonerApi/bin/Debug/net9.0/runtimes/win-x64/native/libHarfBuzzSharp.dll
+/Users/hz111/Desktop/tdmSonerApi/bin/Debug/net9.0/runtimes/win-x86/native/libHarfBuzzSharp.dll
+/Users/hz111/Desktop/tdmSonerApi/bin/Debug/net9.0/runtimes/win/lib/netcoreapp3.0/Microsoft.Win32.SystemEvents.dll
+/Users/hz111/Desktop/tdmSonerApi/bin/Debug/net9.0/runtimes/osx/native/libSkiaSharp.dylib
+/Users/hz111/Desktop/tdmSonerApi/bin/Debug/net9.0/runtimes/win-arm64/native/libSkiaSharp.dll
+/Users/hz111/Desktop/tdmSonerApi/bin/Debug/net9.0/runtimes/win-x64/native/libSkiaSharp.dll
+/Users/hz111/Desktop/tdmSonerApi/bin/Debug/net9.0/runtimes/win-x86/native/libSkiaSharp.dll
+/Users/hz111/Desktop/tdmSonerApi/bin/Debug/net9.0/runtimes/unix/lib/netcoreapp3.0/System.Drawing.Common.dll
+/Users/hz111/Desktop/tdmSonerApi/bin/Debug/net9.0/runtimes/win/lib/netcoreapp3.0/System.Drawing.Common.dll
+/Users/hz111/Desktop/tdmSonerApi/obj/Debug/net9.0/ExcelApi.csproj.AssemblyReference.cache
+/Users/hz111/Desktop/tdmSonerApi/obj/Debug/net9.0/ExcelApi.GeneratedMSBuildEditorConfig.editorconfig
+/Users/hz111/Desktop/tdmSonerApi/obj/Debug/net9.0/ExcelApi.AssemblyInfoInputs.cache
+/Users/hz111/Desktop/tdmSonerApi/obj/Debug/net9.0/ExcelApi.AssemblyInfo.cs
+/Users/hz111/Desktop/tdmSonerApi/obj/Debug/net9.0/ExcelApi.csproj.CoreCompileInputs.cache
+/Users/hz111/Desktop/tdmSonerApi/obj/Debug/net9.0/ExcelApi.MvcApplicationPartsAssemblyInfo.cs
+/Users/hz111/Desktop/tdmSonerApi/obj/Debug/net9.0/ExcelApi.MvcApplicationPartsAssemblyInfo.cache
+/Users/hz111/Desktop/tdmSonerApi/obj/Debug/net9.0/scopedcss/bundle/ExcelApi.styles.css
+/Users/hz111/Desktop/tdmSonerApi/obj/Debug/net9.0/staticwebassets.build.json
+/Users/hz111/Desktop/tdmSonerApi/obj/Debug/net9.0/staticwebassets.development.json
+/Users/hz111/Desktop/tdmSonerApi/obj/Debug/net9.0/staticwebassets.build.endpoints.json
+/Users/hz111/Desktop/tdmSonerApi/obj/Debug/net9.0/staticwebassets/msbuild.ExcelApi.Microsoft.AspNetCore.StaticWebAssets.props
+/Users/hz111/Desktop/tdmSonerApi/obj/Debug/net9.0/staticwebassets/msbuild.ExcelApi.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+/Users/hz111/Desktop/tdmSonerApi/obj/Debug/net9.0/staticwebassets/msbuild.build.ExcelApi.props
+/Users/hz111/Desktop/tdmSonerApi/obj/Debug/net9.0/staticwebassets/msbuild.buildMultiTargeting.ExcelApi.props
+/Users/hz111/Desktop/tdmSonerApi/obj/Debug/net9.0/staticwebassets/msbuild.buildTransitive.ExcelApi.props
+/Users/hz111/Desktop/tdmSonerApi/obj/Debug/net9.0/staticwebassets.pack.json
+/Users/hz111/Desktop/tdmSonerApi/obj/Debug/net9.0/ExcelApi.csproj.Up2Date
+/Users/hz111/Desktop/tdmSonerApi/obj/Debug/net9.0/ExcelApi.dll
+/Users/hz111/Desktop/tdmSonerApi/obj/Debug/net9.0/refint/ExcelApi.dll
+/Users/hz111/Desktop/tdmSonerApi/obj/Debug/net9.0/ExcelApi.pdb
+/Users/hz111/Desktop/tdmSonerApi/obj/Debug/net9.0/ExcelApi.genruntimeconfig.cache
+/Users/hz111/Desktop/tdmSonerApi/obj/Debug/net9.0/ref/ExcelApi.dll
+/Users/hz111/Desktop/hz111/bionluks/tdm_dosyalar/tdmSonerApi/bin/Debug/net9.0/appsettings.Development.json
+/Users/hz111/Desktop/hz111/bionluks/tdm_dosyalar/tdmSonerApi/bin/Debug/net9.0/appsettings.json
+/Users/hz111/Desktop/hz111/bionluks/tdm_dosyalar/tdmSonerApi/bin/Debug/net9.0/ExcelApi.staticwebassets.endpoints.json
+/Users/hz111/Desktop/hz111/bionluks/tdm_dosyalar/tdmSonerApi/bin/Debug/net9.0/ExcelApi
+/Users/hz111/Desktop/hz111/bionluks/tdm_dosyalar/tdmSonerApi/bin/Debug/net9.0/ExcelApi.deps.json
+/Users/hz111/Desktop/hz111/bionluks/tdm_dosyalar/tdmSonerApi/bin/Debug/net9.0/ExcelApi.runtimeconfig.json
+/Users/hz111/Desktop/hz111/bionluks/tdm_dosyalar/tdmSonerApi/bin/Debug/net9.0/ExcelApi.dll
+/Users/hz111/Desktop/hz111/bionluks/tdm_dosyalar/tdmSonerApi/bin/Debug/net9.0/ExcelApi.pdb
+/Users/hz111/Desktop/hz111/bionluks/tdm_dosyalar/tdmSonerApi/bin/Debug/net9.0/BitMiracle.LibTiff.NET.dll
+/Users/hz111/Desktop/hz111/bionluks/tdm_dosyalar/tdmSonerApi/bin/Debug/net9.0/BouncyCastle.Cryptography.dll
+/Users/hz111/Desktop/hz111/bionluks/tdm_dosyalar/tdmSonerApi/bin/Debug/net9.0/ClosedXML.dll
+/Users/hz111/Desktop/hz111/bionluks/tdm_dosyalar/tdmSonerApi/bin/Debug/net9.0/ClosedXML.Parser.dll
+/Users/hz111/Desktop/hz111/bionluks/tdm_dosyalar/tdmSonerApi/bin/Debug/net9.0/DocumentFormat.OpenXml.dll
+/Users/hz111/Desktop/hz111/bionluks/tdm_dosyalar/tdmSonerApi/bin/Debug/net9.0/DocumentFormat.OpenXml.Framework.dll
+/Users/hz111/Desktop/hz111/bionluks/tdm_dosyalar/tdmSonerApi/bin/Debug/net9.0/EPPlus.dll
+/Users/hz111/Desktop/hz111/bionluks/tdm_dosyalar/tdmSonerApi/bin/Debug/net9.0/ExcelNumberFormat.dll
+/Users/hz111/Desktop/hz111/bionluks/tdm_dosyalar/tdmSonerApi/bin/Debug/net9.0/GrapeCity.Documents.Barcode.dll
+/Users/hz111/Desktop/hz111/bionluks/tdm_dosyalar/tdmSonerApi/bin/Debug/net9.0/GrapeCity.DataVisualization.Chart.dll
+/Users/hz111/Desktop/hz111/bionluks/tdm_dosyalar/tdmSonerApi/bin/Debug/net9.0/GrapeCity.Documents.Excel.dll
+/Users/hz111/Desktop/hz111/bionluks/tdm_dosyalar/tdmSonerApi/bin/Debug/net9.0/GrapeCity.Documents.Imaging.dll
+/Users/hz111/Desktop/hz111/bionluks/tdm_dosyalar/tdmSonerApi/bin/Debug/net9.0/GrapeCity.Documents.Pdf.dll
+/Users/hz111/Desktop/hz111/bionluks/tdm_dosyalar/tdmSonerApi/bin/Debug/net9.0/HarfBuzzSharp.dll
+/Users/hz111/Desktop/hz111/bionluks/tdm_dosyalar/tdmSonerApi/bin/Debug/net9.0/Microsoft.AspNetCore.OpenApi.dll
+/Users/hz111/Desktop/hz111/bionluks/tdm_dosyalar/tdmSonerApi/bin/Debug/net9.0/Microsoft.IO.RecyclableMemoryStream.dll
+/Users/hz111/Desktop/hz111/bionluks/tdm_dosyalar/tdmSonerApi/bin/Debug/net9.0/Microsoft.Office.Interop.Excel.dll
+/Users/hz111/Desktop/hz111/bionluks/tdm_dosyalar/tdmSonerApi/bin/Debug/net9.0/Microsoft.OpenApi.dll
+/Users/hz111/Desktop/hz111/bionluks/tdm_dosyalar/tdmSonerApi/bin/Debug/net9.0/Microsoft.Win32.SystemEvents.dll
+/Users/hz111/Desktop/hz111/bionluks/tdm_dosyalar/tdmSonerApi/bin/Debug/net9.0/Newtonsoft.Json.dll
+/Users/hz111/Desktop/hz111/bionluks/tdm_dosyalar/tdmSonerApi/bin/Debug/net9.0/RBush.dll
+/Users/hz111/Desktop/hz111/bionluks/tdm_dosyalar/tdmSonerApi/bin/Debug/net9.0/SixLabors.Fonts.dll
+/Users/hz111/Desktop/hz111/bionluks/tdm_dosyalar/tdmSonerApi/bin/Debug/net9.0/SkiaSharp.dll
+/Users/hz111/Desktop/hz111/bionluks/tdm_dosyalar/tdmSonerApi/bin/Debug/net9.0/SkiaSharp.HarfBuzz.dll
+/Users/hz111/Desktop/hz111/bionluks/tdm_dosyalar/tdmSonerApi/bin/Debug/net9.0/Syncfusion.Compression.Portable.dll
+/Users/hz111/Desktop/hz111/bionluks/tdm_dosyalar/tdmSonerApi/bin/Debug/net9.0/Syncfusion.Licensing.dll
+/Users/hz111/Desktop/hz111/bionluks/tdm_dosyalar/tdmSonerApi/bin/Debug/net9.0/Syncfusion.MetafileRenderer.NET.dll
+/Users/hz111/Desktop/hz111/bionluks/tdm_dosyalar/tdmSonerApi/bin/Debug/net9.0/Syncfusion.Pdf.Imaging.Portable.dll
+/Users/hz111/Desktop/hz111/bionluks/tdm_dosyalar/tdmSonerApi/bin/Debug/net9.0/Syncfusion.Pdf.Portable.dll
+/Users/hz111/Desktop/hz111/bionluks/tdm_dosyalar/tdmSonerApi/bin/Debug/net9.0/Syncfusion.SkiaSharpHelper.Portable.dll
+/Users/hz111/Desktop/hz111/bionluks/tdm_dosyalar/tdmSonerApi/bin/Debug/net9.0/Syncfusion.XlsIO.Portable.dll
+/Users/hz111/Desktop/hz111/bionluks/tdm_dosyalar/tdmSonerApi/bin/Debug/net9.0/Syncfusion.XlsIORenderer.Portable.dll
+/Users/hz111/Desktop/hz111/bionluks/tdm_dosyalar/tdmSonerApi/bin/Debug/net9.0/System.Drawing.Common.dll
+/Users/hz111/Desktop/hz111/bionluks/tdm_dosyalar/tdmSonerApi/bin/Debug/net9.0/System.IO.Packaging.dll
+/Users/hz111/Desktop/hz111/bionluks/tdm_dosyalar/tdmSonerApi/bin/Debug/net9.0/System.Xml.XPath.XmlDocument.dll
+/Users/hz111/Desktop/hz111/bionluks/tdm_dosyalar/tdmSonerApi/bin/Debug/net9.0/zh/GrapeCity.DataVisualization.Chart.resources.dll
+/Users/hz111/Desktop/hz111/bionluks/tdm_dosyalar/tdmSonerApi/bin/Debug/net9.0/ja/GrapeCity.Documents.Imaging.resources.dll
+/Users/hz111/Desktop/hz111/bionluks/tdm_dosyalar/tdmSonerApi/bin/Debug/net9.0/ja/GrapeCity.Documents.Pdf.resources.dll
+/Users/hz111/Desktop/hz111/bionluks/tdm_dosyalar/tdmSonerApi/bin/Debug/net9.0/runtimes/osx/native/libHarfBuzzSharp.dylib
+/Users/hz111/Desktop/hz111/bionluks/tdm_dosyalar/tdmSonerApi/bin/Debug/net9.0/runtimes/win-arm64/native/libHarfBuzzSharp.dll
+/Users/hz111/Desktop/hz111/bionluks/tdm_dosyalar/tdmSonerApi/bin/Debug/net9.0/runtimes/win-x64/native/libHarfBuzzSharp.dll
+/Users/hz111/Desktop/hz111/bionluks/tdm_dosyalar/tdmSonerApi/bin/Debug/net9.0/runtimes/win-x86/native/libHarfBuzzSharp.dll
+/Users/hz111/Desktop/hz111/bionluks/tdm_dosyalar/tdmSonerApi/bin/Debug/net9.0/runtimes/win/lib/netcoreapp3.0/Microsoft.Win32.SystemEvents.dll
+/Users/hz111/Desktop/hz111/bionluks/tdm_dosyalar/tdmSonerApi/bin/Debug/net9.0/runtimes/osx/native/libSkiaSharp.dylib
+/Users/hz111/Desktop/hz111/bionluks/tdm_dosyalar/tdmSonerApi/bin/Debug/net9.0/runtimes/win-arm64/native/libSkiaSharp.dll
+/Users/hz111/Desktop/hz111/bionluks/tdm_dosyalar/tdmSonerApi/bin/Debug/net9.0/runtimes/win-x64/native/libSkiaSharp.dll
+/Users/hz111/Desktop/hz111/bionluks/tdm_dosyalar/tdmSonerApi/bin/Debug/net9.0/runtimes/win-x86/native/libSkiaSharp.dll
+/Users/hz111/Desktop/hz111/bionluks/tdm_dosyalar/tdmSonerApi/bin/Debug/net9.0/runtimes/unix/lib/netcoreapp3.0/System.Drawing.Common.dll
+/Users/hz111/Desktop/hz111/bionluks/tdm_dosyalar/tdmSonerApi/bin/Debug/net9.0/runtimes/win/lib/netcoreapp3.0/System.Drawing.Common.dll
+/Users/hz111/Desktop/hz111/bionluks/tdm_dosyalar/tdmSonerApi/obj/Debug/net9.0/ExcelApi.csproj.AssemblyReference.cache
+/Users/hz111/Desktop/hz111/bionluks/tdm_dosyalar/tdmSonerApi/obj/Debug/net9.0/ExcelApi.GeneratedMSBuildEditorConfig.editorconfig
+/Users/hz111/Desktop/hz111/bionluks/tdm_dosyalar/tdmSonerApi/obj/Debug/net9.0/ExcelApi.AssemblyInfoInputs.cache
+/Users/hz111/Desktop/hz111/bionluks/tdm_dosyalar/tdmSonerApi/obj/Debug/net9.0/ExcelApi.AssemblyInfo.cs
+/Users/hz111/Desktop/hz111/bionluks/tdm_dosyalar/tdmSonerApi/obj/Debug/net9.0/ExcelApi.csproj.CoreCompileInputs.cache
+/Users/hz111/Desktop/hz111/bionluks/tdm_dosyalar/tdmSonerApi/obj/Debug/net9.0/ExcelApi.MvcApplicationPartsAssemblyInfo.cs
+/Users/hz111/Desktop/hz111/bionluks/tdm_dosyalar/tdmSonerApi/obj/Debug/net9.0/ExcelApi.MvcApplicationPartsAssemblyInfo.cache
+/Users/hz111/Desktop/hz111/bionluks/tdm_dosyalar/tdmSonerApi/obj/Debug/net9.0/scopedcss/bundle/ExcelApi.styles.css
+/Users/hz111/Desktop/hz111/bionluks/tdm_dosyalar/tdmSonerApi/obj/Debug/net9.0/staticwebassets.build.json
+/Users/hz111/Desktop/hz111/bionluks/tdm_dosyalar/tdmSonerApi/obj/Debug/net9.0/staticwebassets.development.json
+/Users/hz111/Desktop/hz111/bionluks/tdm_dosyalar/tdmSonerApi/obj/Debug/net9.0/staticwebassets.build.endpoints.json
+/Users/hz111/Desktop/hz111/bionluks/tdm_dosyalar/tdmSonerApi/obj/Debug/net9.0/staticwebassets/msbuild.ExcelApi.Microsoft.AspNetCore.StaticWebAssets.props
+/Users/hz111/Desktop/hz111/bionluks/tdm_dosyalar/tdmSonerApi/obj/Debug/net9.0/staticwebassets/msbuild.ExcelApi.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+/Users/hz111/Desktop/hz111/bionluks/tdm_dosyalar/tdmSonerApi/obj/Debug/net9.0/staticwebassets/msbuild.build.ExcelApi.props
+/Users/hz111/Desktop/hz111/bionluks/tdm_dosyalar/tdmSonerApi/obj/Debug/net9.0/staticwebassets/msbuild.buildMultiTargeting.ExcelApi.props
+/Users/hz111/Desktop/hz111/bionluks/tdm_dosyalar/tdmSonerApi/obj/Debug/net9.0/staticwebassets/msbuild.buildTransitive.ExcelApi.props
+/Users/hz111/Desktop/hz111/bionluks/tdm_dosyalar/tdmSonerApi/obj/Debug/net9.0/staticwebassets.pack.json
+/Users/hz111/Desktop/hz111/bionluks/tdm_dosyalar/tdmSonerApi/obj/Debug/net9.0/ExcelApi.csproj.Up2Date
+/Users/hz111/Desktop/hz111/bionluks/tdm_dosyalar/tdmSonerApi/obj/Debug/net9.0/ExcelApi.dll
+/Users/hz111/Desktop/hz111/bionluks/tdm_dosyalar/tdmSonerApi/obj/Debug/net9.0/refint/ExcelApi.dll
+/Users/hz111/Desktop/hz111/bionluks/tdm_dosyalar/tdmSonerApi/obj/Debug/net9.0/ExcelApi.pdb
+/Users/hz111/Desktop/hz111/bionluks/tdm_dosyalar/tdmSonerApi/obj/Debug/net9.0/ExcelApi.genruntimeconfig.cache
+/Users/hz111/Desktop/hz111/bionluks/tdm_dosyalar/tdmSonerApi/obj/Debug/net9.0/ref/ExcelApi.dll

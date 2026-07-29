@@ -1,0 +1,10 @@
+{
+    "configurations": [
+        {
+            "name": "C#: ExcelApi [Default Configuration]",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}/ExcelApi.csproj"
+        }
+    ]
+}
