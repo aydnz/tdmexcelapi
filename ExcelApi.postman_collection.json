@@ -78,6 +78,84 @@
           "_postman_previewlanguage": "text"
         }
       ]
+    },
+    {
+      "name": "Get Upload Log",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/excel/log?lines=300",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "excel", "log"],
+          "query": [
+            {
+              "key": "lines",
+              "value": "300",
+              "description": "Dosyanın sondan kaç satırının döneceği (varsayılan 300)"
+            }
+          ]
+        },
+        "description": "upload_debug.log dosyasının son satırlarını döner. UploadExcel isteği hâlâ devam ederken veya timeout'a düşse bile, sunucuda en son hangi aşamaya (parse/render/DB connect/insert/commit) kadar gelindiğini görmek için ayrı bir istek olarak çağrılabilir."
+      },
+      "response": [
+        {
+          "name": "200 OK - Log içeriği",
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain; charset=utf-8"
+            }
+          ],
+          "body": "30.07.2026 10:50:12.345 - [Request] UploadExcel çağrıldı. Dosya: BAYI KARNE.xlsx, Boyut: 245678 bytes, Type: 5\n30.07.2026 10:50:12.410 - Parse tamamlandı (65ms). İşlenecek kayıt sayısı: 312\n30.07.2026 10:50:12.411 - Render döngüsü başladı.\n30.07.2026 10:50:15.200 - 10/312 kayıt render edildi. Son ID: 00000.12345 (geçen süre: 2789ms)\n30.07.2026 10:52:40.500 - DB: bağlantı açılıyor (conn.Open)...",
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "name": "200 OK - Log henüz yok",
+          "status": "OK",
+          "code": 200,
+          "body": "Log dosyası henüz oluşmadı.",
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "name": "500 Internal Server Error",
+          "status": "Internal Server Error",
+          "code": 500,
+          "body": "Log okunamadı: <hata mesajı>",
+          "_postman_previewlanguage": "text"
+        }
+      ]
+    },
+    {
+      "name": "Clear Upload Log",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/excel/log/clear",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "excel", "log", "clear"]
+        },
+        "description": "upload_debug.log dosyasının içeriğini temizler."
+      },
+      "response": [
+        {
+          "name": "200 OK - Temizlendi",
+          "status": "OK",
+          "code": 200,
+          "body": "Log temizlendi.",
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "name": "500 Internal Server Error",
+          "status": "Internal Server Error",
+          "code": 500,
+          "body": "Log temizlenemedi: <hata mesajı>",
+          "_postman_previewlanguage": "text"
+        }
+      ]
     }
   ]
 }

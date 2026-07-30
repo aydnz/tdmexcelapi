@@ -1,0 +1,21 @@
+## .NET build outputs
+bin/
+obj/
+
+## VS/VSCode
+.vs/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+
+## OS junk
+.DS_Store
+Thumbs.db
+
+## User-specific files
+*.user
+*.suo
+
+## Uploaded runtime files (varsa üretim dosyası, repoya girmemeli)
+Uploads/
