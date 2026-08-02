@@ -4,9 +4,24 @@ using GrapeCity.Documents.Excel;
 using GrapeCity.Documents.Excel.Drawing;
 using MySqlConnector;
 using System.Diagnostics;
+using System.Collections.Concurrent;
 
 namespace ExcelApi.Controllers
 {
+    public enum UploadJobStatus { Pending, Processing, Completed, Failed }
+
+    public class UploadJob
+    {
+        public string Id { get; set; } = "";
+        public UploadJobStatus Status { get; set; } = UploadJobStatus.Pending;
+        public int Total { get; set; }
+        public int Processed { get; set; }
+        public List<object>? Result { get; set; }
+        public string? Error { get; set; }
+        public DateTime CreatedAt { get; set; } = DateTime.Now;
+        public DateTime? CompletedAt { get; set; }
+    }
+
     [Route("api/[controller]")]
     [ApiController]
     public class ExcelController : ControllerBase
@@ -14,6 +29,7 @@ namespace ExcelApi.Controllers
         private readonly IConfiguration _config;
         private static readonly object _logLock = new object();
         private static readonly string _logFilePath = Path.Combine(AppContext.BaseDirectory, "upload_debug.log");
+        private static readonly ConcurrentDictionary<string, UploadJob> _jobs = new();
 
         public ExcelController(IConfiguration config)
         {
@@ -79,24 +95,69 @@ namespace ExcelApi.Controllers
             }
         }
 
+        // Upload artık senkron çalışmıyor: dosya hemen okunup arka planda işleniyor,
+        // istek anında bir jobId dönüyor. Uzun süren render/DB işlemi gateway/proxy
+        // timeout'undan (504) etkilenmesin diye bu şekilde tasarlandı.
         [HttpPost("upload")]
         public IActionResult UploadExcel([FromForm] IFormFile file, [FromForm] int type)
         {
             if (file == null || file.Length == 0)
                 return BadRequest("Dosya yüklenmedi");
 
+            byte[] fileBytes;
+            using (var stream = new MemoryStream())
+            {
+                file.CopyTo(stream);
+                fileBytes = stream.ToArray();
+            }
+
+            var jobId = Guid.NewGuid().ToString("N");
+            var job = new UploadJob { Id = jobId, Status = UploadJobStatus.Pending };
+            _jobs[jobId] = job;
+
+            Log($"[Request] UploadExcel çağrıldı. JobId: {jobId}, Dosya: {file.FileName}, Boyut: {file.Length} bytes, Type: {type}");
+
+            _ = Task.Run(() => ProcessUploadJob(jobId, fileBytes, type));
+
+            return Accepted(new
+            {
+                jobId,
+                statusUrl = $"/api/excel/upload/status/{jobId}",
+                message = "Yükleme kabul edildi, arka planda işleniyor."
+            });
+        }
+
+        [HttpGet("upload/status/{jobId}")]
+        public IActionResult GetUploadStatus(string jobId)
+        {
+            if (!_jobs.TryGetValue(jobId, out var job))
+                return NotFound(new { message = "Job bulunamadı." });
+
+            return Ok(new
+            {
+                job.Id,
+                status = job.Status.ToString(),
+                job.Total,
+                job.Processed,
+                percent = job.Total > 0 ? Math.Round(job.Processed * 100.0 / job.Total, 1) : 0,
+                result = job.Status == UploadJobStatus.Completed ? job.Result : null,
+                error = job.Error,
+                job.CreatedAt,
+                job.CompletedAt
+            });
+        }
+
+        private void ProcessUploadJob(string jobId, byte[] fileBytes, int type)
+        {
+            var job = _jobs[jobId];
+            job.Status = UploadJobStatus.Processing;
             var swTotal = Stopwatch.StartNew();
 
             try
             {
-                Log($"[Request] UploadExcel çağrıldı. Dosya: {file.FileName}, Boyut: {file.Length} bytes, Type: {type}");
-
                 var swParse = Stopwatch.StartNew();
 
-                using var stream = new MemoryStream();
-                file.CopyTo(stream);
-                stream.Position = 0;
-
+                using var stream = new MemoryStream(fileBytes);
                 var workbook = new Workbook();
                 workbook.Open(stream);
 
@@ -104,8 +165,11 @@ namespace ExcelApi.Controllers
                 var bayi = workbook.Worksheets["bayi-personel"];
                 if (karne == null || bayi == null)
                 {
-                    Log("[Hata] Gerekli sayfalar bulunamadı.");
-                    return BadRequest("Gerekli sayfalar bulunamadı.");
+                    Log($"[Hata][{jobId}] Gerekli sayfalar bulunamadı.");
+                    job.Status = UploadJobStatus.Failed;
+                    job.Error = "Gerekli sayfalar bulunamadı.";
+                    job.CompletedAt = DateTime.Now;
+                    return;
                 }
 
                 var usedRange = bayi.UsedRange;
@@ -125,7 +189,8 @@ namespace ExcelApi.Controllers
                 }
 
                 swParse.Stop();
-                Log($"Parse tamamlandı ({swParse.ElapsedMilliseconds}ms). İşlenecek kayıt sayısı: {pairs.Count}");
+                job.Total = pairs.Count;
+                Log($"[{jobId}] Parse tamamlandı ({swParse.ElapsedMilliseconds}ms). İşlenecek kayıt sayısı: {pairs.Count}");
 
                 var resultList = new List<object>();
                 var dbItems = new List<(string id, string base64)>();
@@ -140,7 +205,7 @@ namespace ExcelApi.Controllers
 
                 int processedCount = 0;
                 var swRender = Stopwatch.StartNew();
-                Log("Render döngüsü başladı.");
+                Log($"[{jobId}] Render döngüsü başladı.");
 
                 foreach (var (dVal, cVal) in pairs)
                 {
@@ -160,34 +225,39 @@ namespace ExcelApi.Controllers
                     dbItems.Add((id, base64));
 
                     processedCount++;
+                    job.Processed = processedCount;
                     if (processedCount % 10 == 0 || processedCount == pairs.Count)
-                        Log($"{processedCount}/{pairs.Count} kayıt render edildi. Son ID: {id} (geçen süre: {swRender.ElapsedMilliseconds}ms)");
+                        Log($"[{jobId}] {processedCount}/{pairs.Count} kayıt render edildi. Son ID: {id} (geçen süre: {swRender.ElapsedMilliseconds}ms)");
                 }
 
                 swRender.Stop();
-                Log($"Render döngüsü bitti ({swRender.ElapsedMilliseconds}ms). Toplam {processedCount} kayıt işlendi.");
+                Log($"[{jobId}] Render döngüsü bitti ({swRender.ElapsedMilliseconds}ms). Toplam {processedCount} kayıt işlendi.");
 
-                Log("SaveToDatabase başlıyor.");
-                var dbTimings = SaveToDatabase(dbItems, type);
-                Log("SaveToDatabase bitti.");
+                Log($"[{jobId}] SaveToDatabase başlıyor.");
+                var dbTimings = SaveToDatabase(dbItems, type, jobId);
+                Log($"[{jobId}] SaveToDatabase bitti.");
 
                 swTotal.Stop();
 
-                Log($"[Timing] parse={swParse.ElapsedMilliseconds}ms render={swRender.ElapsedMilliseconds}ms " +
+                Log($"[Timing][{jobId}] parse={swParse.ElapsedMilliseconds}ms render={swRender.ElapsedMilliseconds}ms " +
                     $"dbConnect={dbTimings.connectMs}ms dbCreate={dbTimings.createMs}ms dbDelete={dbTimings.deleteMs}ms " +
                     $"dbInsert={dbTimings.insertMs}ms dbCommit={dbTimings.commitMs}ms total={swTotal.ElapsedMilliseconds}ms");
 
-                return Ok(resultList);
+                job.Result = resultList;
+                job.Status = UploadJobStatus.Completed;
+                job.CompletedAt = DateTime.Now;
             }
             catch (Exception ex)
             {
                 swTotal.Stop();
-                Log($"[Hata] {ex.Message} (total={swTotal.ElapsedMilliseconds}ms)\n{ex.StackTrace}");
-                return StatusCode(500, $"Sunucu hatası: {ex.Message}");
+                Log($"[Hata][{jobId}] {ex.Message} (total={swTotal.ElapsedMilliseconds}ms)\n{ex.StackTrace}");
+                job.Status = UploadJobStatus.Failed;
+                job.Error = ex.Message;
+                job.CompletedAt = DateTime.Now;
             }
         }
 
-        private (long connectMs, long createMs, long deleteMs, long insertMs, long commitMs) SaveToDatabase(List<(string id, string base64)> items, int type)
+        private (long connectMs, long createMs, long deleteMs, long insertMs, long commitMs) SaveToDatabase(List<(string id, string base64)> items, int type, string jobId)
         {
             string connStr = _config.GetConnectionString("MySql")!;
             using var conn = new MySqlConnection(connStr);
@@ -211,8 +281,12 @@ namespace ExcelApi.Controllers
                         img LONGTEXT,
                         upload_date DATETIME,
                         type INT,
+                        job_id VARCHAR(64),
+                        deleted TINYINT(1) NOT NULL DEFAULT 0,
                         INDEX idx_branch_code (branch_code),
-                        INDEX idx_type (type)
+                        INDEX idx_type (type),
+                        INDEX idx_job_id (job_id),
+                        INDEX idx_deleted (deleted)
                     ) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci";
                 createCmd.ExecuteNonQuery();
             }
@@ -242,6 +316,52 @@ namespace ExcelApi.Controllers
                 }
             }
 
+            // Tablo daha önce (job_id olmadan) oluşturulmuş olabilir - kolon yoksa ekle.
+            using (var colCmd = conn.CreateCommand())
+            {
+                colCmd.CommandTimeout = dbCommandTimeoutSeconds;
+                colCmd.CommandText = @"
+                    SELECT COUNT(1) FROM information_schema.columns
+                    WHERE table_schema = DATABASE() AND table_name = 'tbl_reports' AND column_name = 'job_id'";
+                var colExists = Convert.ToInt64(colCmd.ExecuteScalar());
+                if (colExists == 0)
+                {
+                    Log("DB: job_id kolonu eksik, ekleniyor...");
+                    var swCol = Stopwatch.StartNew();
+                    using (var addColCmd = conn.CreateCommand())
+                    {
+                        addColCmd.CommandTimeout = dbCommandTimeoutSeconds;
+                        addColCmd.CommandText = "ALTER TABLE tbl_reports ADD COLUMN job_id VARCHAR(64), ADD INDEX idx_job_id (job_id)";
+                        addColCmd.ExecuteNonQuery();
+                    }
+                    swCol.Stop();
+                    Log($"DB: job_id kolonu eklendi ({swCol.ElapsedMilliseconds}ms).");
+                }
+            }
+
+            // Tablo daha önce (deleted olmadan) oluşturulmuş olabilir - kolon yoksa ekle.
+            using (var delColCmd = conn.CreateCommand())
+            {
+                delColCmd.CommandTimeout = dbCommandTimeoutSeconds;
+                delColCmd.CommandText = @"
+                    SELECT COUNT(1) FROM information_schema.columns
+                    WHERE table_schema = DATABASE() AND table_name = 'tbl_reports' AND column_name = 'deleted'";
+                var delColExists = Convert.ToInt64(delColCmd.ExecuteScalar());
+                if (delColExists == 0)
+                {
+                    Log("DB: deleted kolonu eksik, ekleniyor...");
+                    var swDelCol = Stopwatch.StartNew();
+                    using (var addDelColCmd = conn.CreateCommand())
+                    {
+                        addDelColCmd.CommandTimeout = dbCommandTimeoutSeconds;
+                        addDelColCmd.CommandText = "ALTER TABLE tbl_reports ADD COLUMN deleted TINYINT(1) NOT NULL DEFAULT 0, ADD INDEX idx_deleted (deleted)";
+                        addDelColCmd.ExecuteNonQuery();
+                    }
+                    swDelCol.Stop();
+                    Log($"DB: deleted kolonu eklendi ({swDelCol.ElapsedMilliseconds}ms).");
+                }
+            }
+
             using var tx = conn.BeginTransaction();
 
             var swDelete = Stopwatch.StartNew();
@@ -261,11 +381,12 @@ namespace ExcelApi.Controllers
             {
                 insertCmd.Transaction = tx;
                 insertCmd.CommandTimeout = dbCommandTimeoutSeconds;
-                insertCmd.CommandText = "INSERT INTO tbl_reports (branch_code, img, upload_date, type) VALUES (@branch_code, @img, @upload_date, @type)";
+                insertCmd.CommandText = "INSERT INTO tbl_reports (branch_code, img, upload_date, type, job_id) VALUES (@branch_code, @img, @upload_date, @type, @job_id)";
                 var pBranch = insertCmd.Parameters.Add("@branch_code", MySqlDbType.VarChar);
                 var pImg = insertCmd.Parameters.Add("@img", MySqlDbType.LongText);
                 var pUploadDate = insertCmd.Parameters.Add("@upload_date", MySqlDbType.DateTime);
                 var pType = insertCmd.Parameters.Add("@type", MySqlDbType.Int32);
+                var pJobId = insertCmd.Parameters.Add("@job_id", MySqlDbType.VarChar);
                 insertCmd.Prepare();
 
                 int inserted = 0;
@@ -275,6 +396,7 @@ namespace ExcelApi.Controllers
                     pImg.Value = base64;
                     pUploadDate.Value = DateTime.Now;
                     pType.Value = type;
+                    pJobId.Value = jobId;
                     insertCmd.ExecuteNonQuery();
 
                     inserted++;

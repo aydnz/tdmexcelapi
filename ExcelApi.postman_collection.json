@@ -10,11 +10,32 @@
       "key": "baseUrl",
       "value": "http://localhost:5054",
       "type": "string"
+    },
+    {
+      "key": "jobId",
+      "value": "",
+      "type": "string",
+      "description": "Excel Upload isteğinden dönen jobId; 'Excel Upload' isteği çalıştırıldığında test script'i tarafından otomatik doldurulur."
     }
   ],
   "item": [
     {
       "name": "Excel Upload",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "if (pm.response.code === 202) {",
+              "    const jsonData = pm.response.json();",
+              "    pm.collectionVariables.set('jobId', jsonData.jobId);",
+              "    console.log('jobId kaydedildi:', jsonData.jobId);",
+              "}"
+            ]
+          }
+        }
+      ],
       "request": {
         "method": "POST",
         "header": [],
@@ -40,20 +61,20 @@
             }
           ]
         },
-        "description": "Excel dosyasını yükler. PARAKENDECİLİK(KARNE) ve bayi-personel sayfalarını işler, her satır için karne görselini base64'e çevirir ve tbl_reports tablosuna kaydeder."
+        "description": "Excel dosyasını yükler. Dosya hemen okunur ve işlem arka planda (background job) başlatılır; istek anında 202 Accepted ile bir jobId döner - render + DB işlemi uzun sürebildiği için (yüzlerce kayıtta 10+ dakika) artık senkron beklenmez, böylece gateway/proxy timeout (504) alınmaz. İşlemin durumunu takip etmek için dönen jobId ile 'Get Upload Status' isteğini poll edin, veya ham log akışı için 'Get Upload Log' isteğini kullanın."
       },
       "response": [
         {
-          "name": "200 OK - Başarılı",
-          "status": "OK",
-          "code": 200,
+          "name": "202 Accepted - Job başlatıldı",
+          "status": "Accepted",
+          "code": 202,
           "header": [
             {
               "key": "Content-Type",
               "value": "application/json"
             }
           ],
-          "body": "[\n  {\n    \"id\": \"00000.12345\",\n    \"base64\": \"iVBORw0KGgoAAAANSUhEUgAA...\"\n  },\n  {\n    \"id\": \"00000.67890\",\n    \"base64\": \"iVBORw0KGgoAAAANSUhEUgAA...\"\n  }\n]",
+          "body": "{\n  \"jobId\": \"3f2b1c4d5e6f7890abcdef1234567890\",\n  \"statusUrl\": \"/api/excel/upload/status/3f2b1c4d5e6f7890abcdef1234567890\",\n  \"message\": \"Yükleme kabul edildi, arka planda işleniyor.\"\n}",
           "_postman_previewlanguage": "json"
         },
         {
@@ -64,18 +85,78 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "name": "400 Bad Request - Sayfa Bulunamadı",
-          "status": "Bad Request",
-          "code": 400,
-          "body": "Gerekli sayfalar bulunamadı.",
-          "_postman_previewlanguage": "text"
-        },
-        {
           "name": "500 Internal Server Error",
           "status": "Internal Server Error",
           "code": 500,
           "body": "Sunucu hatası: <hata mesajı>",
           "_postman_previewlanguage": "text"
+        }
+      ]
+    },
+    {
+      "name": "Get Upload Status",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/excel/upload/status/{{jobId}}",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "excel", "upload", "status", "{{jobId}}"]
+        },
+        "description": "'Excel Upload' isteğinden dönen jobId ile işlemin durumunu döner (Pending/Processing/Completed/Failed). 'Excel Upload' isteği başarıyla çalıştırıldığında {{jobId}} collection değişkeni otomatik güncellenir; bu isteği Completed veya Failed görene kadar tekrar tekrar çalıştırın (poll edin)."
+      },
+      "response": [
+        {
+          "name": "200 OK - Processing",
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"id\": \"3f2b1c4d5e6f7890abcdef1234567890\",\n  \"status\": \"Processing\",\n  \"total\": 312,\n  \"processed\": 120,\n  \"percent\": 38.5,\n  \"result\": null,\n  \"error\": null,\n  \"createdAt\": \"2026-07-31T13:00:10.123\",\n  \"completedAt\": null\n}",
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "name": "200 OK - Completed",
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"id\": \"3f2b1c4d5e6f7890abcdef1234567890\",\n  \"status\": \"Completed\",\n  \"total\": 429,\n  \"processed\": 429,\n  \"percent\": 100,\n  \"result\": [\n    { \"id\": \"00000.12345\" },\n    { \"id\": \"00000.67890\" }\n  ],\n  \"error\": null,\n  \"createdAt\": \"2026-07-31T13:00:10.123\",\n  \"completedAt\": \"2026-07-31T13:14:53.671\"\n}",
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "name": "200 OK - Failed",
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"id\": \"3f2b1c4d5e6f7890abcdef1234567890\",\n  \"status\": \"Failed\",\n  \"total\": 312,\n  \"processed\": 45,\n  \"percent\": 14.4,\n  \"result\": null,\n  \"error\": \"Gerekli sayfalar bulunamadı.\",\n  \"createdAt\": \"2026-07-31T13:00:10.123\",\n  \"completedAt\": \"2026-07-31T13:01:02.001\"\n}",
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "name": "404 Not Found - Job bulunamadı",
+          "status": "Not Found",
+          "code": 404,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"message\": \"Job bulunamadı.\"\n}",
+          "_postman_previewlanguage": "json"
         }
       ]
     },
@@ -96,7 +177,7 @@
             }
           ]
         },
-        "description": "upload_debug.log dosyasının son satırlarını döner. UploadExcel isteği hâlâ devam ederken veya timeout'a düşse bile, sunucuda en son hangi aşamaya (parse/render/DB connect/insert/commit) kadar gelindiğini görmek için ayrı bir istek olarak çağrılabilir."
+        "description": "upload_debug.log dosyasının son satırlarını döner. Upload arka planda işlenirken sunucuda en son hangi aşamaya (parse/render/DB connect/insert/commit) kadar gelindiğini görmek için 'Get Upload Status' isteğine ek olarak, ham log akışını incelemek amacıyla çağrılabilir."
       },
       "response": [
         {
@@ -109,7 +190,7 @@
               "value": "text/plain; charset=utf-8"
             }
           ],
-          "body": "30.07.2026 10:50:12.345 - [Request] UploadExcel çağrıldı. Dosya: BAYI KARNE.xlsx, Boyut: 245678 bytes, Type: 5\n30.07.2026 10:50:12.410 - Parse tamamlandı (65ms). İşlenecek kayıt sayısı: 312\n30.07.2026 10:50:12.411 - Render döngüsü başladı.\n30.07.2026 10:50:15.200 - 10/312 kayıt render edildi. Son ID: 00000.12345 (geçen süre: 2789ms)\n30.07.2026 10:52:40.500 - DB: bağlantı açılıyor (conn.Open)...",
+          "body": "30.07.2026 10:50:12.345 - [Request] UploadExcel çağrıldı. JobId: 3f2b1c4d5e6f7890abcdef1234567890, Dosya: BAYI KARNE.xlsx, Boyut: 245678 bytes, Type: 5\n30.07.2026 10:50:12.410 - [3f2b1c4d5e6f7890abcdef1234567890] Parse tamamlandı (65ms). İşlenecek kayıt sayısı: 312\n30.07.2026 10:50:12.411 - [3f2b1c4d5e6f7890abcdef1234567890] Render döngüsü başladı.\n30.07.2026 10:50:15.200 - [3f2b1c4d5e6f7890abcdef1234567890] 10/312 kayıt render edildi. Son ID: 00000.12345 (geçen süre: 2789ms)\n30.07.2026 10:52:40.500 - DB: bağlantı açılıyor (conn.Open)...",
           "_postman_previewlanguage": "text"
         },
         {
